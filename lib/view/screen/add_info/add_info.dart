@@ -1,3 +1,4 @@
+
 import 'package:firebase_learn/controller/getx_controller/add_info.dart';
 import 'package:firebase_learn/view/common_widget/common_button.dart';
 import 'package:firebase_learn/view/common_widget/common_loding_button.dart';
@@ -53,7 +54,7 @@ class AddInfo extends StatelessWidget {
             Obx(() => controller.isLoading.isFalse
                 ? CommonButton(
                     buttonName: 'ADD INFO',
-                    onTap: ()async{
+                    onTap: () async {
                       await controller.addUserInfo();
                       Get.to(const Home());
                     },

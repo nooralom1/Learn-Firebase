@@ -7,7 +7,14 @@ class UserInfoModel {
   String? joinDate;
   String? validity;
 
-  UserInfoModel({this.name,this.id,this.courseName,this.institute,this.department,this.joinDate,this.validity});
+  UserInfoModel(
+      {this.name,
+      this.id,
+      this.courseName,
+      this.institute,
+      this.department,
+      this.joinDate,
+      this.validity});
 
   UserInfoModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];

@@ -1,4 +1,5 @@
 class UserInfoModel {
+
   String? name;
   String? id;
   String? courseName;

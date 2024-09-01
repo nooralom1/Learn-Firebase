@@ -5,8 +5,8 @@ import 'package:firebase_learn/controller/firebase_controller/add_info.dart';
 import 'package:firebase_learn/controller/firebase_controller/get_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-class AddInfoController extends GetxController{
 
+class AddInfoController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController idController = TextEditingController();
   TextEditingController courseController = TextEditingController();
@@ -18,8 +18,8 @@ class AddInfoController extends GetxController{
   final formKey = GlobalKey<FormState>();
   RxList<dynamic> user = [].obs;
 
-  addUserInfo()async{
-    Map<String,dynamic> user ={
+  addUserInfo() async {
+    Map<String, dynamic> user = {
       "name": nameController.text,
       "id": idController.text,
       "course name": courseController.text,
@@ -33,7 +33,7 @@ class AddInfoController extends GetxController{
     var status = await AddInfoService.addInfoService(info: user);
     log("=======11111111=========");
     isLoading.value = false;
-    if(status){
+    if (status) {
       nameController.clear();
       idController.clear();
       courseController.clear();
@@ -44,16 +44,17 @@ class AddInfoController extends GetxController{
     }
   }
 
-  getUserInfo()async{
+  getUserInfo() async {
     isLoading.value = true;
     log("================");
-    QuerySnapshot<Map<String, dynamic>>? get = await GetInfoService.getInfoService();
-   if(get!=null){
-     for(var data in get.docs.toList()){
-       var name = ({data["name"]});
-       log("++++++++++++++user: $name");
-     }
-   }
+    QuerySnapshot<Map<String, dynamic>>? get =
+        await GetInfoService.getInfoService();
+    if (get != null) {
+      for (var data in get.docs.toList()) {
+        var name = ({data["name"]});
+        log("++++++++++++++user: $name");
+      }
+    }
     isLoading.value = false;
   }
 }

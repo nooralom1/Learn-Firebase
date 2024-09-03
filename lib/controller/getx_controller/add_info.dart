@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_learn/controller/firebase_controller/add_info.dart';
 import 'package:firebase_learn/controller/firebase_controller/get_info.dart';
